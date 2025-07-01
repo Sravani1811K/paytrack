@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paytrack-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paytrack
+  template:
+    metadata:
+      labels:
+        app: paytrack
+    spec:
+      containers:
+        - name: paytrack
+          image: sravani1811k/paytrack-app:latest
+          ports:
+            - containerPort: 8081
